@@ -1,9 +1,31 @@
-﻿<h3 class="card-header">Verify Email</h3>
-<div class="card-body">
-    <div *ngIf="emailStatus == EmailStatus.Verifying">
-        Verifying...
+﻿<div class="d-flex justify-content-center" style="padding-top: 80px;">
+  <div style="width: 300px; background: #fff; border: 1.5px solid #C41E3A; border-radius: 12px; box-shadow: 0 4px 24px rgba(196,30,58,0.10);">
+
+    <div style="padding: 1.5rem 1.5rem 1rem;">
+      <div style="width:36px;height:4px;background:#C41E3A;border-radius:2px;margin-bottom:12px;"></div>
+      <h3 style="margin:0 0 4px;font-size:18px;font-weight:600;color:#1a1a1a;">Verify Email</h3>
     </div>
-    <div *ngIf="emailStatus == EmailStatus.Failed">
-        Verification failed, you can also verify your account using the <a routerLink="forgot-password">forgot password</a> page.
+
+    <hr class="mx-3 my-0" />
+
+    <div style="padding: 1.25rem 1.5rem 1.5rem;">
+
+      <div *ngIf="emailStatus == EmailStatus.Verifying" class="d-flex align-items-center gap-2" style="font-size:12px;color:#6c757d;">
+        <span class="spinner-border spinner-border-sm"></span>
+        Verifying your email...
+      </div>
+
+      <div *ngIf="emailStatus == EmailStatus.Failed">
+        <div style="width:36px;height:36px;border-radius:50%;background:#fff0f2;border:1px solid #f5c4d0;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+          <i class="bi bi-x-lg" style="font-size:14px;color:#C41E3A;"></i>
+        </div>
+        <p style="font-size:12px;color:#1a1a1a;font-weight:500;margin:0 0 4px;">Verification failed</p>
+        <p style="font-size:11px;color:#6c757d;line-height:1.5;margin:0;">
+          You can also verify your account using the
+          <a routerLink="forgot-password" style="color:#C41E3A;text-decoration:none;font-weight:500;">forgot password</a> page.
+        </p>
+      </div>
+
     </div>
+  </div>
 </div>
